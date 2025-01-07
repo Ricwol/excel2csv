@@ -4,10 +4,9 @@ build-backend = "hatchling.build"
 
 [project]
 name = "excel2csv"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
-    "openpyxl>=3.1.5",
-    "pytest>=7.4.4",
+    "openpyxl>=3.1.5"
 ]
 requires-python = ">= 3.8"
 description = "Excel to csv converter"
@@ -27,9 +26,17 @@ classifiers = [
     "Programming Language :: Python :: 3.10",
 ]
 
+[project.optional-dependencies]
+testing = [
+  "pytest>=8.3.4"
+]
+
 [project.urls]
 Repository = "https://github.com/Ricwol/excel2csv.git"
 Issues = "https://github.com/Ricwol/excel2csv/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
 
 [tool.pytest.ini_options]
 pythonpath = [
